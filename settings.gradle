@@ -1,0 +1,34 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+
+
+    resolutionStrategy {
+        eachPlugin {
+            // 为 Matrix 插件指定其完整的依赖坐标
+            if (requested.id.namespace == "com.tencent.matrix") {
+                useModule("com.tencent.matrix:matrix-gradle-plugin:${requested.version}")
+            }
+        }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "MatrixApp"
+include ':app'
+include ':matrixlib'
