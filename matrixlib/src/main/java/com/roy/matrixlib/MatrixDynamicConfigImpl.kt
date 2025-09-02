@@ -1,42 +1,34 @@
-package com.roy.matrixlib;
+package com.roy.matrixlib
 
-import com.tencent.mrs.plugin.IDynamicConfig;
+import com.tencent.mrs.plugin.IDynamicConfig
 
-/**
- * @author: njb
- * @date: 2023/8/10 11:24
- * @desc:
- */
-public class MatrixDynamicConfigImpl implements IDynamicConfig {
-    public MatrixDynamicConfigImpl() {}
+class MatrixDynamicConfigImpl : IDynamicConfig {
+    val isFPSEnable: Boolean
+        get() = true
+    val isTraceEnable: Boolean
+        get() = true
+    val isMatrixEnable: Boolean
+        get() = true
+    val isDumpHprof: Boolean
+        get() = false
 
-    public boolean isFPSEnable() { return true;}
-    public boolean isTraceEnable() { return true; }
-    public boolean isMatrixEnable() { return true; }
-    public boolean isDumpHprof() {  return false;}
-
-    @Override
-    public String get(String key, String defStr) {
-        return defStr;
+    override fun get(key: String, defStr: String): String {
+        return defStr
     }
 
-    @Override
-    public int get(String key, int defInt) {
-        return defInt;
+    override fun get(key: String, defInt: Int): Int {
+        return defInt
     }
 
-    @Override
-    public long get(String key, long defLong) {
-        return defLong;
+    override fun get(key: String, defLong: Long): Long {
+        return defLong
     }
 
-    @Override
-    public boolean get(String key, boolean defBool) {
-        return defBool;
+    override fun get(key: String, defBool: Boolean): Boolean {
+        return defBool
     }
 
-    @Override
-    public float get(String key, float defFloat) {
-        return defFloat;
+    override fun get(key: String, defFloat: Float): Float {
+        return defFloat
     }
 }

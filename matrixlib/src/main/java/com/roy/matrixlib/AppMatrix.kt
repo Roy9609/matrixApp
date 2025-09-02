@@ -5,7 +5,7 @@ import com.roy.matrixlib.MatrixUtils
 
 
 object AppMatrix {
-    fun initMatrix(application: Application?,splashActivity:String) {
-        MatrixUtils.getInstance().initPlugin(application, splashActivity) //"com.example.myapplication.matrix.MatrixActivity;"
+    fun initMatrix(application: Application,splashActivity:String) {
+        MatrixUtils.instance.initPlugin(application, splashActivity) //"com.example.myapplication.matrix.MatrixActivity;"
     }
 }

@@ -1,7 +1,7 @@
 package com.roy.matrixapp
 
 import android.app.Application
-import com.example.myapplication.matrix.AppMatrix
+
 
 /**
  *    desc   :
@@ -12,6 +12,6 @@ import com.example.myapplication.matrix.AppMatrix
 class App:Application() {
     override fun onCreate() {
         super.onCreate()
-        AppMatrix.initMatrix(this,"")
+
     }
 }
