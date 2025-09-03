@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
 }
 
+
 android {
     namespace 'com.roy.matrixapp'
     compileSdk 34
@@ -38,5 +39,5 @@ dependencies {
     implementation libs.androidx.appcompat
     implementation libs.material
 
-    implementation project(":matrixlib")
+    debugImplementation project(":matrixlib")
 }

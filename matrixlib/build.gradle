@@ -68,4 +68,18 @@ dependencies {
 
 apply from: '../publish.gradle'
 
+/*
+
+ //  gradle版本太高了
+
+apply plugin: 'com.tencent.matrix-plugin'
+matrix {
+    trace {
+        enable = true
+        baseMethodMapFile = "${project.buildDir}/matrix_output/Debug.methodmap"
+        blackListFile = "${project.projectDir}/matrixTrace/blackMethodList.txt"
+    }
+}
+*/
+
 

@@ -11,9 +11,26 @@ buildscript  {
 }
 
 
+
 plugins {
 alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.android.library) apply false
 }
 
+subprojects {
+    if (project.name == "app") {
+        apply plugin: 'com.android.application'
+        apply plugin: 'com.tencent.matrix-plugin'
+        matrix {
+            trace {
+                enable = true
+                baseMethodMapFile = "${project.buildDir}/matrix_output/Debug.methodmap"
+                blackListFile = "${project.projectDir}/matrixTrace/blackMethodList.txt"
+            }
+        }
+        print("${project.name}--------------matrix com.tencent.matrix-plugin已加入")
+    }else{
+        print("${project.name}--------------library未加入matrix com.tencent.matrix-plugin")
+    }
+}
